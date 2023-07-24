@@ -1,26 +1,59 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <nav>
+      <ul class="menu">
+        <router-link to="/">Inicio</router-link>
+        <router-link to="/ItemList">Detalle de Personas</router-link>
+        <router-link to="/about"> Información</router-link>
+        <router-link to="/contact">Contáctenos</router-link>
+      </ul>
+    </nav>
+    <ItemList />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
+};
+
+</script>
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+nav {
+  background-color: #333;
+}
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.menu li {
+  margin-right: 20px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.menu a:hover {
+  background-color: #555;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 20px;
 }
 </style>
